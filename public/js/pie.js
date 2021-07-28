@@ -1,27 +1,2 @@
-const voteHandler = async (event) => {
-    event.preventDefault();
-    let el = event.target;
-    if(el.tagName === "BUTTON"){
-        pie_id = document.querySelector('#vote-group').dataset.pie;
-        //update vote api
-        const response = await fetch('/api/vote', {
-            method: 'POST',
-            body: JSON.stringify({ 
-                choice: el.value,
-                pie_id
-            }),
-            headers: { 'Content-Type': 'application/json' },
-        });
-
-        if (response.ok) {
-            location.reload();
-        } else {
-            alert('Vote failed.');
-        }
-    }
-};
-
-document
-    .querySelector('#vote-group')
-    .addEventListener('click', voteHandler);
+const voteHandler=async a=>{a.preventDefault();let b=a.target;if("BUTTON"===b.tagName){pie_id=document.querySelector("#vote-group").dataset.pie;const a=await fetch("/api/vote",{method:"POST",body:JSON.stringify({choice:b.value,pie_id}),headers:{"Content-Type":"application/json"}});a.ok?location.reload():alert("Vote failed.")}};document.querySelector("#vote-group").addEventListener("click",voteHandler);
   

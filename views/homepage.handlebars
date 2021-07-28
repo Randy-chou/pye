@@ -1,9 +1,9 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <div class="container mt-5">
     <form id="search_bar" class="mx-auto pb-3 w-75">
-        <div class="input-group">
-            <input id="search_input" type="text" class="form-control w-50" placeholder="search...">
-            <select class="form-select" id="category">
+        <div class="input-group" style="height: 70px;">
+            <input id="search_input" type="text" class="form-control w-50" placeholder="search..." style="font-size: 32px;">
+            <select class="form-select" id="category" style="font-size: 32px;">
                 <option selected value="none">Categories</option>
                 <option value="Food">Food</option>
                 <option value="Movies">Movies</option>
@@ -16,7 +16,7 @@
         </div>
     </form>
 
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 mt-4">
+    <div class="row row-cols-1 row-cols-lg-3 mt-4">
         {{#each pies as |pie|}}
         {{> pie-data}}
         {{/each}}
